@@ -1,0 +1,26 @@
+{
+  "name": "monolink",
+  "version": "1.0.0",
+  "description": "Jamstack blog/portfolio with Headless CMS and serverless architecture",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm run --recursive dev",
+    "build": "pnpm run --recursive build",
+    "start": "pnpm run --recursive start",
+    "lint": "pnpm run --recursive lint",
+    "type-check": "pnpm run --recursive type-check",
+    "clean": "pnpm run --recursive clean && rm -rf node_modules",
+    "frontend:dev": "pnpm --filter @monolink/frontend dev",
+    "frontend:build": "pnpm --filter @monolink/frontend build",
+    "cms:dev": "pnpm --filter @monolink/cms dev",
+    "cms:build": "pnpm --filter @monolink/cms build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

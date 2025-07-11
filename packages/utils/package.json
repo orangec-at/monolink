@@ -1,0 +1,16 @@
+{
+  "name": "@monolink/utils",
+  "version": "1.0.0",
+  "description": "Shared utilities for MonoLink",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@monolink/types": "*"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@monolink/cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Strapi Headless CMS for MonoLink",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .tmp build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@strapi/strapi": "4.25.15",
+    "@strapi/plugin-users-permissions": "4.25.15",
+    "@strapi/plugin-i18n": "4.25.15",
+    "@strapi/plugin-cloud": "4.25.15",
+    "@strapi/plugin-upload": "4.25.15",
+    "@strapi/provider-upload-cloudinary": "4.25.15",
+    "better-sqlite3": "8.6.0",
+    "pg": "8.8.0",
+    "@monolink/types": "workspace:*"
+  },
+  "author": {
+    "name": "MonoLink Team"
+  },
+  "strapi": {
+    "uuid": "f3c6a5b2-1234-5678-9abc-def012345678"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "pnpm": ">=8.0.0"
+  }
+}
