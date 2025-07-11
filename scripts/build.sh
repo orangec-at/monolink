@@ -21,6 +21,10 @@ else
   echo "⚠️ CMS .env file not found, skipping CMS build"
 fi
 
+# Build blog app
+echo "📝 Building blog app..."
+pnpm --filter @monolink/blog build
+
 # Build frontend
 echo "🎨 Building frontend..."
 pnpm --filter @monolink/frontend build
