@@ -1,40 +1,44 @@
 {
   "name": "@monolink/cms",
-  "private": true,
   "version": "0.1.0",
-  "description": "Strapi Headless CMS for MonoLink",
+  "private": true,
+  "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
-    "develop": "strapi develop",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
     "dev": "strapi develop",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
-    "type-check": "tsc --noEmit",
-    "clean": "rm -rf .tmp build"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/strapi": "4.25.15",
-    "@strapi/plugin-users-permissions": "4.25.15",
-    "@strapi/plugin-i18n": "4.25.15",
-    "@strapi/plugin-cloud": "4.25.15",
-    "@strapi/plugin-upload": "4.25.15",
-    "@strapi/provider-upload-cloudinary": "4.25.15",
-    "better-sqlite3": "8.6.0",
-    "pg": "8.8.0",
-    "@monolink/types": "workspace:*"
+    "@strapi/plugin-cloud": "5.18.0",
+    "@strapi/plugin-users-permissions": "5.18.0",
+    "@strapi/strapi": "5.18.0",
+    "better-sqlite3": "11.3.0",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
-  "author": {
-    "name": "MonoLink Team"
-  },
-  "strapi": {
-    "uuid": "f3c6a5b2-1234-5678-9abc-def012345678"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "cffcb96c-521f-4142-b088-dd0d9e805d0d",
+    "installId": "b790063dcdc491f95fad00358fb14e5386f0e931ce20108bd9dbeca77e0ebb2b"
   }
 }
