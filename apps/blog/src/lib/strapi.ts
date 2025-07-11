@@ -81,9 +81,17 @@ export const getStrapiURL = (path = '') => {
   return `${STRAPI_URL}${path}`;
 };
 
-export const getStrapiMedia = (url: string | null | undefined) => {
+export const getStrapiMedia = (url: string | null | undefined, options?: {
+  width?: number;
+  height?: number;
+  quality?: 'auto' | number;
+}) => {
   if (!url) return null;
+  
+  // If it's already a full URL (including Cloudinary), return as is
   if (url.startsWith('http')) return url;
+  
+  // For relative URLs, prepend Strapi base URL
   return getStrapiURL(url);
 };
 

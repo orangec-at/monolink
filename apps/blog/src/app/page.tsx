@@ -5,6 +5,9 @@ import { getStrapiMedia, Article } from "@/lib/strapi";
 import SearchBox from "@/components/SearchBox";
 import { Header } from "@/components/Header";
 
+// Enable ISR with 60 seconds revalidation
+export const revalidate = 60;
+
 export default async function Home() {
   let articles: Article[] = [];
 

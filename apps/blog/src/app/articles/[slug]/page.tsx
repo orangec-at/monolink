@@ -1,12 +1,32 @@
 import Image from "next/image";
-import { getArticleBySlug } from "@/lib/api";
+import { getArticleBySlug, getArticles } from "@/lib/api";
 import { getStrapiMedia } from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import Link from "next/link";
+import Comments from "@/components/Comments";
+import ArticleStats from "@/components/ArticleStats";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+// Enable ISR with 60 seconds revalidation
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  try {
+    const response = await getArticles({
+      pagination: { pageSize: 100 }
+    });
+    
+    return response.data.map((article) => ({
+      slug: article.slug,
+    }));
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
 }
 
 export default async function ArticlePage({ params }: PageProps) {
@@ -65,6 +85,9 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
         )}
 
+        {/* Article Stats */}
+        <ArticleStats articleSlug={article.slug} />
+
         {/* Content */}
         <div className=" dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-8">
           <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -77,6 +100,9 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
           </div>
         </div>
+
+        {/* Comments */}
+        <Comments articleSlug={article.slug} />
 
         {/* Navigation */}
         <div className="mt-8 flex items-center justify-between">
