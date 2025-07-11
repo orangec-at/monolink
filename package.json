@@ -10,10 +10,8 @@
     "lint": "pnpm run --recursive lint",
     "type-check": "pnpm run --recursive type-check",
     "clean": "pnpm run --recursive clean && rm -rf node_modules",
-    "frontend:dev": "pnpm --filter @monolink/frontend dev",
-    "frontend:build": "pnpm --filter @monolink/frontend build",
-    "cms:dev": "pnpm --filter @monolink/cms dev",
-    "cms:build": "pnpm --filter @monolink/cms build"
+    "cms": "pnpm -F @monolink/cms",
+    "blog": "pnpm -F @monolink/blog"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -11,6 +11,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@monolink/types": "*"
+    "@monolink/types": "workspace:*"
   }
 }

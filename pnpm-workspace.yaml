@@ -1,3 +1,14 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
+  - apps/*
+  - packages/*
+onlyBuiltDependencies:
+  - '@strapi/strapi'
+  - '@swc/core'
+  - better-sqlite3
+  - core-js
+  - core-js-pure
+  - esbuild
+  - sharp
+  - unrs-resolver
+ignoredBuiltDependencies:
+  - better-sqlite3
